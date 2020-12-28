@@ -18,5 +18,10 @@
   "homepage": "https://github.com/MomoDevlop/cesar-ciphering#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^5.11.1",
+    "webpack-dev-server": "^3.11.0"
   }
 }
