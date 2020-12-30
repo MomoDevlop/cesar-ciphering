@@ -16,8 +16,9 @@ let isValid = true
 function cipher(message, key) {
     let result = ''
     message = message.trim()
-    if (key >= 1 && key <= 25) {
-        // Creation de l'alphabet chiffré en fonction de la clé 
+    if (key >= 1 && key <= 25 && message !== '') {
+        // Creation de l'alphabet chiffré en fonction de la clé
+        key = parseInt(key) 
         cyperAlphabet = alphabet.slice(-key) + alphabet.slice(0, -key)
 
         // Parccourir le message et faire la correspondance entre  chaque lettre du message clair  avec la valeur correspondante dans l'alphabet chiffré
@@ -67,7 +68,7 @@ function cipher(message, key) {
 function decipher(message, key) {
     let result = ''
     message = message.trim();
-    if (key >= 1 && key <= 25) {
+    if (key >= 1 && key <= 25  && message !== '') {
         // Creation de l'alphabet chiffré en fonction de la clé 
         cyperAlphabet = alphabet.slice(-key) + alphabet.slice(0, -key)
 
@@ -146,7 +147,7 @@ function bindElements(result) {
 function testInputs(flag) {
     if (!flag) {
         const message = `<div class="alert alert-danger text-center" role="alert"> 
-                            La clé doit être comprise entre 1 et 25
+                            La clé doit être comprise entre 1-25 et le message doit avoir au moins un caractère
                          </div>`
         document.getElementById('errorId').innerHTML = message
 
